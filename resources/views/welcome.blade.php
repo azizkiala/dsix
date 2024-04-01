@@ -18,69 +18,53 @@
 
 <body class="hold-transition lockscreen">
     <!-- Automatic element centering -->
-
     @include('auth.nav1')
-
-        <!-- Main content -->
-        <section class="content">
-
-           <div class="row">
-
-                <div class="col-md-4 text-center">
-                    <div class="error-page">
-                    <img width="450" src="{{ asset('img/hosting.png') }}" alt="User Image">
-                </div>
+    <!-- Main content -->
+    <section class="content mt-5">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <h1><img width="90" src="{{ asset('img/ds.png') }}" alt="User Image"></h1>
+                <img width="290" src="{{asset(zongela()) }}" alt="User Image">
             </div>
-                <div class="col-md-8">
-                    <div class="error-page">
+            <div class="col-md-4">
+                <div class="">
                     <div class="error-content">
-                        <h1 class="text-danger"><b>Gérer votre Ecole Autrement</b></h1>
-                        <h3>Avec 2-Six vous avez la possibilité de gérer votre école avec sécurité et fiabilité</h3>
-
+                        <h3>Avec 2-Six vous avez la possibilité de gérer votre école autrement en toute sécurité</h3>
                         <p>
-                          Votre compte de gestion vous donne la possibilité de gérer votre école.
-                          si vous n'avez pas encore créer le compte, cliquer sur Créer un compte de gestion</a>
+                            Se connecter avec numéro mobile de votre compte en cliquant sur <b>Se connecter</b> pour commencer votre session de gérence.
+                            Si vous n'avez pas un compte, cliquer sur <b>Créer un compte</b></a>
                         </p>
-
                         <form class="search-form">
-                          <div class="input-group">
-                          <div class="input-group-append">
-                                <a href="{{ route('register') }}">
-                              <p  class="btn btn-success">Créer un compte de gestion
-                              </p></a>
+                            <div class="">
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                        <div class="">
+                                            <a href="{{ route('register') }}">
+                                                <p
+                                                    class="btn btn-success btn-block p-3">Créer un compte
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="">
+                                            <a href="{{ route('login') }}">
+                                                <p
+                                                    class="btn btn-primary btn-block p-3">Connectez-vous
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
-                          </div>
-                          <!-- /.input-group -->
+                            <!-- /.input-group -->
                         </form>
-                      </div>
                     </div>
                 </div>
             </div>
-
-
-
-          </div>
-          <!-- /.error-page -->
-
-        </section>
-        <!-- /.content -->
-      </div>
-    </div>
-    @include('auth.mutu')
-      <!-- /.content-wrapper -->
-
-
-
-    <!-- jQuery -->
-
-
-    <script src="../../plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('base/plugins/bootstrap/js/bootstrap.bundle.min.js"')}}></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('base/dist/js/adminlte.min.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('base/dist/js/demo.js')}}"></script>
-</body>
-
-</html>
+            <div class="col-md-2"></div>
+        </div>
+    </section>
+   @include('auth.footer_login')

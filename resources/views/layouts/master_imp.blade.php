@@ -32,8 +32,8 @@
 	<script src="{{asset('/global_assets/js/demo_pages/dashboard.js')}}"></script>
 	<script src="{{asset('/global_assets/js/demo_pages/layout_fixed_sidebar_custom.js')}}"></script>
 	<!-- /theme JS files -->
-	
-	
+
+
 	<!-- /theme JS files -->
 </head>
 <body class="navbar-top bg-slate-800">

@@ -49,7 +49,6 @@
                     @endforelse
                         </ul>
                     </li>
-
                     <li class="dropdown">
                         <a href="{{route('eleve')}}" class="dropdown-toggle">
                             <span class="micon bi bi-people"></span
@@ -70,17 +69,7 @@
 
                     </li>
 
-                    <li>
-                        <a href="javascript:;" class="dropdown-toggle">
-                            <span class="micon bi bi-chat-right-dots"></span
-                            ><span class="mtext">Message</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="">Nouveau</a></li>
-                            <li><a href="">Boîte de reception</a></li>
-                            <li><a href="{{route('journal_caisse')}}">Message envoyé</a></li>
-                        </ul>
-                    </li>
+
                     <li>
                         <a href="javascript:;" class="dropdown-toggle">
                             <span class="micon bi bi-folder2-open "></span
@@ -90,19 +79,6 @@
                             <li><a href="">Ajouter</a></li>
                             <li><a href="">Document</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                        <div class="sidebar-small-cap">Monde</div>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="dropdown-toggle">
-                            <span class="micon bi bi-globe"></span
-                            ><span class="mtext">Infos</span>
-                        </a>
-
                     </li>
 
                 </ul>

@@ -27,41 +27,36 @@
             </div>
             <div class="modal-body">
                 @if (!$Eleves->isEmpty())
-                    <div class="contact-directory-list">
-                        <ul class="row">
-                            @foreach ($Eleves as $eleve)
-                                <li class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                                    <div class="contact-directory-box">
-                                        <div class="contact-dire-info text-center">
-                                            <div class="contact-avatar">
-                                                <span>
-                                                    @if (!$eleve->photo_eleve == '')
-                                                    <img src="/uploads/image_eleves/{{ $eleve->photo_eleve }}"
-                                                            alt="">
-                                                    @else
-                                                    <img src="/img/user.png" alt="">
-                                                    @endif
-                                                </span>
-                                            </div>
-                                            <div class="contact-name">
-                                                <h4>{{ $eleve->nom }} {{ $eleve->post_nom }} {{ $eleve->prenom }}</h4>
-                                                <p>{{ $eleve->classe }} {{ $eleve->cycle }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="view-contact">
-                                            <a href="{{route('eleve_show', [$eleve->id, $eleve->slug, $eleve->post_nom, $eleve->prenom])}}">Voir Profile</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+                <div class="row clearfix">
+
+                    @foreach ($Eleves as $eleve)
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
+                        <div class="text-center">
+                            <div class="da-card-photo">
+                                @if (!$eleve->photo_eleve == '')
+                                <img class="text-center" style="height:150px;width:150px; border-radius:50%" src="/uploads/image_eleves/{{ $eleve->photo_eleve }}"
+                                        alt="">
+                                @else
+                                <img style="height:150px;width:150px; border-radius:50%"  src="/img/user.png" alt="">
+                                @endif
+                                <div class="da-overlay">
+
+                                </div>
+                            </div>
+                            <div class="da-card-content">
+                                <h5 class="h5 mb-10"><a href="{{route('eleve_show', [$eleve->id, $eleve->slug, $eleve->post_nom, $eleve->prenom])}}">{{ $eleve->nom }} {{ $eleve->post_nom }} {{ $eleve->prenom }}</a></h5>
+                                <p class="mb-0">{{ $eleve->classe }} {{ $eleve->cycle }}</p>
+                            </div>
+                        </div>
                     </div>
+                    @endforeach
+                </div>
                 @else
-                    <div class=" text-center mt-3 text-muted">
-                        <h6 class="card-title">
-                            <i class="dw dw-user-1 font-30 text-muted  pd-10"></i><br> Aucun élève
-                        </h6>
-                    </div>
+                <div class=" text-center mt-3 text-muted">
+                    <h6 class="card-title">
+                        <i class="dw dw-user-1 font-30 text-muted  pd-10"></i><br> Aucun élève
+                    </h6>
+                </div>
                 @endif
             </div>
 
@@ -113,5 +108,7 @@
 <script src="{{ asset('d/src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 <script src="{{ asset('d/vendors/scripts/dashboard2.js') }}"></script>
 </body>
-
 </html>
+
+
+

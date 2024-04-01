@@ -6,7 +6,6 @@
   <title>{{ isset($title) ? $title . ' | ' : '' }} 2-SIX</title>
     <link rel="shortcut icon" type="image/x-icon" href="/img/ds.png" />
 
-
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -18,70 +17,68 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo">
-    <div class="lockscreen-name"><img width="100" src="{{ asset('img/ds.png') }}" alt="User Image"></div>
-
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Se connecter avec numéro de compte</p>
-
-      <form action="{{ route('login') }}" method="post">
-        @csrf
-        <div class="input-group mb-3">
-          <input type="text" name="telephone" class="form-control" placeholder="Téléphone mobile ou E-mail">
-          @error('telephone')
-            <h6 class="text-dnager text-left">{{$message}}</h6>
-           @enderror
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-phone"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control pt-2" placeholder="Mot de passe">
-          @error('password')
-            <h6 class="text-dnager text-left">{{$message}}</h6>
-           @enderror
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- /.col -->
-        </div>
-      <div class="social-auth-links text-center mb-3">
-        <button type="submit" class="btn btn-block btn-primary">
-           Connexion
-        </button>
-
-      </div>
-      <!-- /.social-auth-links -->
-    </form>
-    <div class="row">
-        <div class="col-6">
-            <p class="mb-1">
-                <a href="">Mot de passe oublié ?</a>
-              </p>
-        </div>
-        <div class="col-6">
-            <p class="mb-1 text-right">
-                <a href="{{ route('register') }}" class="text-center">Créer un compte</a>
-              </p>
-        </div>
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="{{ route('ebandeli') }}" class="h1"><img width="60" src="{{ asset('/img/ds.png') }}" alt=""></a>
     </div>
+    <div class="card-body">
+      <p class="login-box-msg">Se connecter avec numéro mobile</p>
+      <form class="mt-2" action="{{ route('login') }}" method="post">
+        @csrf
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group mb-3">
+                    <input type="text" name="telephone" class="form-control" placeholder="Numéro mobile de votre compte"><br>
+                </div>
+                    @if($errors->has('telephone'))<p class="alert alert-danger text-sm">
+                        <i class="fas fa-exclamation mr-2"></i> {{ $errors->first('telephone') }}
+                    </p>
+                    @enderror
+            </div>
+            <div class="col-md-12">
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control pt-2" placeholder="Mot de passe"><br>
+                </div>
+                    @if($errors->has('password'))<p class="alert alert-danger text-sm">
+                        <i class="fas fa-exclamation mr-2"></i> {{ $errors->first('password') }}
+                    </p>
+                @enderror
+            </div>
+        </div>
 
 
+        <div class="row">
+            <!-- /.col -->
+        </div>
+        <div class="social-auth-links text-center mb-3">
+            <button type="submit" class="btn btn-block btn-primary">
+                Connexion
+            </button>
+        </div>
+        <!-- /.social-auth-links -->
+    </form>
+      <p class="mt-3 mb-1">
+        <a href="{{ route('password.request') }}">Mot de passe oublié ?</a>
+      </p>
+      <p class="mt-3 mb-1">
+        <a href="{{ route('register') }}">Créer compte</a>
+      </p>
     </div>
     <!-- /.login-card-body -->
+
   </div>
+  <hr>
+<div class="lockscreen-footer text-center ">
+    Copyright &copy; 2021-{{ date('Y') }} <br>
+    <a href="" class="text-black">by Aziz-Kiala</a>
+</div>
 </div>
 <!-- /.login-box -->
-@include('auth.mutu')
+
+<!-- /.content -->
+</div>
+</div>
+
 <!-- jQuery -->
 <script src="{{ asset('base/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -90,3 +87,5 @@
 <script src="{{ asset('base/dist/js/adminlte.min.js')}}"></script>
 </body>
 </html>
+
+

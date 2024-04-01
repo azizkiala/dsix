@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,18 @@ if(!function_exists('nom_route')){
 		return $nRoute;
 
 	}
+}
+
+function zongela(){
+
+    $array = [
+        '/img/im1.png',
+        '/img/about-img.svg',
+        '/img/im2.png',
+    ];
+    $r = random_int(0, 2);
+    $re = $array[$r];
+    return $re;
 }
 
 if(!function_exists('AfficheMois')){

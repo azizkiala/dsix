@@ -1,7 +1,6 @@
 @include('ebandeli.ebandeli2')
 @extends('auth.master_public')
 @section('section')
-
 <!-- Slider Area -->
 <section class="slider call-action overlay">
     <div class="hero-slider">
@@ -173,7 +172,6 @@
     </div>
 </section>
 <!--/ End Feautes -->
-
 <!-- Start Fun-facts -->
 <div id="fun-facts" class="fun-facts section overlay">
     <div class="container">
